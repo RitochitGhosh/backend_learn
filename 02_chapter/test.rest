@@ -12,7 +12,7 @@ POST http://localhost:8383/api/data
 Content-Type: application/json
 
 {
-    "name": "Aritra Ray"
+    "name": "Arindam Majumder"
 }
 
 ### DELETE ENDPOINT DOR POPPING USER

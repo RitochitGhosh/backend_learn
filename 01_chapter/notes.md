@@ -150,10 +150,77 @@ This will:
 
 ### 📄 What’s in `package.json`?
 
-This file is like a project manifest. It stores:
+This is like a configuration file. It stores:
 - Project name and version
 - Dependencies (packages you install)
 - Scripts (custom terminal commands)
 - And some metadata
 
 Open it in your favorite text editor and take a look!
+
+
+### What is modular programming?
+Modular programming is a software design technique that emphasizes breaking down a program into smaller, manageable, and reusable pieces called modules. Each module encapsulates a specific functionality or feature, making it easier to develop, test, and maintain the code.
+
+### Benefits of Modular Programming:
+- **Reusability**: Modules can be reused across different projects, reducing code duplication.
+- **Maintainability**: Smaller modules are easier to understand and modify, making it simpler to fix bugs or add new features.
+- **Collaboration**: Multiple developers can work on different modules simultaneously, improving team productivity.
+- **Encapsulation**: Modules can hide their internal implementation details, exposing only the necessary interfaces to interact with other parts of the program.
+- **Scalability**: Modular design allows for easier scaling of applications as new features can be added by creating new modules without affecting existing ones.
+
+Now, let's explore how to create and use modules in Node.js in our pre-created project `my-node-project`.
+
+### Creating a Module in Node.js
+
+1. **Create a new file**: Inside your `my-node-project` folder, create a new file called `math.js`.
+
+2. **Define your module**: In `math.js`, define some functions that you want to export. For example:
+```javascript
+// math.js
+function add(a, b) {
+  return a + b;
+}
+```
+
+> You can obviously add more functions like subtract, multiply, divide, etc.
+
+3. **Export your module**: At the end of `math.js`, export the functions you want to make available to other files:
+```javascript
+// math.js
+module.exports = {
+  add,
+};
+```
+
+4. **Use your module**: In another file (e.g., `app.js`), import your module and use its functions:
+```javascript
+// app.js
+const math = require('./math');
+const sum = math.add(5, 3);
+console.log(`The sum is: ${sum}`);
+```
+
+Now, lets do some modifications in the `package.json` file to add a script to run the app.js file.
+
+### Adding a Script to `package.json`
+
+1. Open `package.json` in your project folder.
+2. Find the `"scripts"` section and add a new script to run your `app.js` file:
+```json
+"scripts": {
+  "start": "node app.js"
+}
+```
+3. Save the file.
+
+### Running Your Project
+
+Now, you can run your project using the command:
+```bash
+npm start
+```
+This will execute the `app.js` file, and you should see the output:
+```
+The sum is: 8
+```
