@@ -1,0 +1,9 @@
+REST API - JSON data
+
+GET /api/users -> Lists all users - Done
+GET /api/users/:id -> Get the user with specified (id) - Done
+POST /api/users -> Creates new users - Done
+PATCH /api/users/:id -> Edit the user with specified (id) - Done
+DELETE /api/users/:id -> Delete the specified (id) - Done
+
+mongoose -> Schema (model) Using model we can do CRUD operations

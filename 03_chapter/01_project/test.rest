@@ -1,0 +1,35 @@
+### TEST GET / WEBSITE
+GET http://localhost:8000
+
+### TEST GET / dashboard WEBSITE
+GET http://localhost:8000/dashboard
+
+### DATA ENDPOINT
+GET http://localhost:8000/api/users
+
+### DATA ENDPOINT FOR ADDING USER
+POST http://localhost:8000/api/users
+Content-Type: application/json
+
+{
+    "first_name": "Ritochit",
+    "last_name": "Ghosh",
+    "email": "imrito18@gmail.com",
+    "gender": "Male",
+    "job_title": "SDE @ Microsoft"
+}
+
+### DATA ENDPOINT FOR UPDATING AN USER
+PUT http://localhost:8000/api/users/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "first_name": "Ritochit",
+    "last_name": "Ghosh",
+    "email": "imrito18@gmail.com",
+    "gender": "Male",
+    "job_title": "SDE @ Amazon"
+}
+### DELETE ENDPOINT DOR POPPING USER
+DELETE http://localhost:8000/api/users/1
